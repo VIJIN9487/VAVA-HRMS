@@ -1,0 +1,11 @@
+
+{
+  "name": "VAVA HRMS",
+  "main": "index.html",
+  "window": {
+    "title": "VAVA HRMS",
+    "width": 1000,
+    "height": 700,
+    "icon": "vava-icon-fixed.ico"
+  }
+}
