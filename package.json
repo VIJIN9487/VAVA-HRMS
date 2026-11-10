@@ -1,6 +1,7 @@
 
 {
   "name": "VAVA HRMS",
+  "version": "1.0.0",
   "main": "index.html",
   "window": {
     "title": "VAVA HRMS",
