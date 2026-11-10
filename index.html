@@ -569,8 +569,33 @@
         }
 
         checkPermanentUserSession();
-    </script>
-</body>
+        <script>
+(async function checkVavaUpdate() {
+    const currentVersion = "1.0.0";
+    const updateUrl = "https://raw.githubusercontent.com/VIJIN9487/VAVA-HRMS/main/latest.json";
+
+    try {
+        const response = await fetch(updateUrl + "?t=" + Date.now());
+        if (!response.ok) return;
+
+        const update = await response.json();
+
+        if (update.version && update.version !== currentVersion) {
+            const install = confirm(
+                "A new VAVA HRMS version (" + update.version +
+                ") is available.\n\nUpdate now?"
+            );
+
+            if (install && update.download) {
+                window.open(update.download, "_blank");
+            }
+        }
+    } catch (error) {
+        console.log("Update check failed:", error);
+    }
+})();
+</script>
+    </body>
 </html>
 
 
